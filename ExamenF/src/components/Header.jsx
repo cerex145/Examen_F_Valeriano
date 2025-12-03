@@ -1,6 +1,56 @@
+import { Link, NavLink } from 'react-router';
+
 const Header = () => {
     return (
-        <h1>ñp</h1>
+        <header className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+            <div className="container-fluid">
+                <Link className="navbar-brand fw-bold" to="/">
+                    <i className="bi bi-stars me-2"></i>
+                    GhibiliAPi-Peliculas
+                </Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <nav className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                        <li className="nav-item">
+                            <NavLink
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                to="/"
+                                end
+                            >
+                                <i className="bi bi-house-door me-1"></i>
+                                Home
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                to="/entities"
+                            >
+                                <i className="bi bi-people me-1"></i>
+                                Entities
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                to="/contact"
+                            >
+                                <i className="bi bi-chat-dots me-1"></i>
+                                Contacto
+                            </NavLink>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     );
 };
+
 export default Header;
